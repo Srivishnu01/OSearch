@@ -5,10 +5,9 @@ public class Driver
 {  
 public static void main(String args[]) throws Exception
     {
-        String fileName = args[0];
-        String keyWord = args[1];
-        BufferedReader text = new BufferedReader(new FileReader(fileName));
-        List<String> resultSnippets = Finder.getSnippets(text, keyWord);
+        String fileName = args[0], keyWord = args[1];
+        Scanner sc = new Scanner(new File(fileName));
+        List<String> resultSnippets = Finder.getSnippets(sc, keyWord);
         int i=1;
         System.out.println(resultSnippets.size());
         for(String snippet : resultSnippets)
